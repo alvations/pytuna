@@ -1,0 +1,142 @@
+after-batches: 0
+after-epochs: 0
+allow-unk: false
+batch-flexible-lr: false
+batch-normal-words: 1920
+beam-size: 6
+best-deep: false
+clip-gemm: 0
+clip-norm: 5
+cost-type: ce-mean-words
+cpu-threads: 0
+data-weighting-type: sentence
+dec-cell: gru
+dec-cell-base-depth: 2
+dec-cell-high-depth: 1
+dec-depth: 6
+devices:
+  - 0
+  - 1
+  - 2
+  - 3
+dim-emb: 1024
+dim-rnn: 1024
+dim-vocabs:
+  - 100000
+  - 100000
+disp-freq: 500
+disp-label-counts: false
+dropout-rnn: 0
+dropout-src: 0
+dropout-trg: 0
+early-stopping: 5
+embedding-fix-src: false
+embedding-fix-trg: false
+embedding-normalization: false
+enc-cell: gru
+enc-cell-depth: 1
+enc-depth: 6
+enc-type: bidirectional
+exponential-smoothing: 0.0001
+grad-dropping-momentum: 0
+grad-dropping-rate: 0
+grad-dropping-warmup: 100
+guided-alignment-cost: ce
+guided-alignment-weight: 1
+ignore-model-config: false
+interpolate-env-vars: false
+keep-best: true
+label-smoothing: 0.1
+layer-normalization: false
+learn-rate: 0.0001
+log: mymodel/train.log
+log-level: info
+lr-decay: 0
+lr-decay-freq: 50000
+lr-decay-inv-sqrt: 8000
+lr-decay-repeat-warmup: false
+lr-decay-reset-optimizer: false
+lr-decay-start:
+  - 10
+  - 1
+lr-decay-strategy: epoch+stalled
+lr-report: true
+lr-warmup: 8000
+lr-warmup-at-reload: false
+lr-warmup-cycle: false
+lr-warmup-start-rate: 0
+max-length: 100
+max-length-crop: false
+max-length-factor: 3
+maxi-batch: 1000
+maxi-batch-sort: trg
+mini-batch: 1000
+mini-batch-fit: true
+mini-batch-fit-step: 10
+mini-batch-words: 0
+model: mymodel
+multi-node: false
+multi-node-overlap: true
+n-best: false
+no-reload: false
+no-restore-corpus: false
+no-shuffle: false
+normalize: 0.6
+optimizer: adam
+optimizer-delay: 1
+optimizer-params:
+  - 0.9
+  - 0.98
+  - 1e-09
+overwrite: true
+quiet: false
+quiet-translation: false
+relative-paths: false
+right-left: false
+save-freq: 5000
+seed: 0
+skip: false
+sqlite: ""
+sqlite-drop: false
+sync-sgd: true
+tempdir: /tmp
+tied-embeddings: false
+tied-embeddings-all: true
+tied-embeddings-src: false
+train-sets:
+  - data/train.src
+  - data/train.trg
+transformer-aan-activation: swish
+transformer-aan-depth: 2
+transformer-aan-nogate: false
+transformer-decoder-autoreg: self-attention
+transformer-dim-aan: 2048
+transformer-dim-ffn: 4096
+transformer-dropout: 0.1
+transformer-dropout-attention: 0.1
+transformer-dropout-ffn: 0.1
+transformer-ffn-activation: swish
+transformer-ffn-depth: 2
+transformer-heads: 8
+transformer-no-projection: false
+transformer-postprocess: da
+transformer-postprocess-emb: d
+transformer-preprocess: n
+transformer-tied-layers:
+  []
+type: transformer
+valid-freq: 5000
+valid-log: mymodel/valid.log
+valid-max-length: 1000
+valid-metrics:
+  - ce-mean-words
+  - perplexity
+valid-mini-batch: 16
+valid-sets:
+  - data/valid.src
+  - data/valid.trg
+vocabs:
+  - mymodel/vocab.src.yml
+  - mymodel/vocab.trg.yml
+word-penalty: 0
+workspace: 2048
